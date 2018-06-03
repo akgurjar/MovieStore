@@ -1,0 +1,30 @@
+<div class="dialog-container">
+	<span class="dialog-title">Movie Form</span>
+	<form [formGroup]="formGroup">
+		<div class="dialog-body">
+			<mat-form-field>
+				<input type="text" matInput formControlName="name" placeholder="Movie Name" required/>
+			</mat-form-field>
+			<mat-form-field>
+				<input type="text" matInput formControlName="banner" placeholder="Movie Banner URL"/>
+			</mat-form-field>
+			<mat-slider 
+				formControlName="review" 
+				thumbLabel 
+				min="0" 
+				max="5"
+				step="0.1"
+			></mat-slider>
+		</div>
+	</form>
+	<button 
+		mat-raised-button 
+		style="margin-top: 10px" 
+		color="primary" 
+		(click)="onSave()"
+		[disabled]="!formGroup.valid"
+	>
+		<mat-icon>done</mat-icon>&nbsp;
+		<span>Save</span>
+	</button>
+</div>

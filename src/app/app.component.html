@@ -1,0 +1,21 @@
+<mat-toolbar color="primary" class="mat-elevation-z5 toolbar">
+	<div class="fixed-width toolbar-row">
+		<span>Movie Store</span>
+		<div style="flex: 1"></div>
+		<button mat-button (click)="onAddMovie()">
+			<mat-icon>playlist_add</mat-icon>&nbsp;
+			<span>ADD MOVIE</span>
+		</button>
+	</div>
+</mat-toolbar>
+<div class="container">
+	<div class="fixed-width wrapper" [ngStyle]="{'min-height.px': minHeight}">
+		<ma-movie *ngFor="let movie of movies" [info]="movie" (change)="onChangeMovie($event)"></ma-movie>
+		<span class="default-text" *ngIf="movies.length == 0">No Movie Available</span>
+	</div>
+	<footer>
+		<span>Made with</span>&nbsp;
+		<mat-icon>favorite</mat-icon>&nbsp;
+		<span>Angular at NIT Hamirpur</span>
+	</footer>
+</div>

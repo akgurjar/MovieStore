@@ -1,0 +1,20 @@
+<div class="movie-container mat-elevation-z1">
+	<img [src]="info.banner" class="movie-banner"/>
+	<div class="movie-actions">
+		<div class="movie-actions-wrapper">
+			<button mat-mini-fab color="primary" class="movie-play-btn" matTooltip="Play Movie" (click)="onPlay()">
+				<mat-icon>play_arrow</mat-icon>
+			</button>
+			<button mat-mini-fab color="accent" class="movie-edit-btn" matTooltip="Edit Movie" (click)="onEdit()">
+				<mat-icon>edit</mat-icon>
+			</button>
+			<button mat-mini-fab color="warn" class="movie-close-btn" matTooltip="Remove Movie" (click)="onRemove()">
+				<mat-icon>close</mat-icon>
+			</button>
+		</div>
+	</div>
+	<ng-template ngFor let-reviewStep [ngForOf]="reviewSteps">
+		<mat-icon class="review-star">{{reviewStar(reviewStep)}}</mat-icon>
+	</ng-template>
+	<span class="movie-name">{{info.name}}</span>
+</div>
